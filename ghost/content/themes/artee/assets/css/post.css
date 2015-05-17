@@ -1,0 +1,477 @@
+/* clearfix */
+.cf:before, .artee-post-container:before, .artee-post-author:before, .artee-post-tags:before,
+.cf:after,
+.artee-post-container:after,
+.artee-post-author:after,
+.artee-post-tags:after {
+  content: " ";
+  display: table; }
+
+.cf:after, .artee-post-container:after, .artee-post-author:after, .artee-post-tags:after {
+  clear: both; }
+
+body.post-template,
+body.tag-template,
+body.author-template {
+  background-image: none !important;
+  background-color: #fff;
+  border: 0.625rem solid #252525;
+  border-top: 0; }
+
+/*******************************/
+/* artee site head styles */
+/*******************************/
+.post-template .artee-site-head,
+.tag-template .artee-site-head,
+.author-template .artee-site-head,
+.artee-site-head.error-page {
+  background: #fff;
+  padding-top: 1.875rem;
+  padding-bottom: 1.5625rem; }
+  .post-template .artee-site-head.with-post-image,
+  .tag-template .artee-site-head.with-post-image,
+  .author-template .artee-site-head.with-post-image,
+  .artee-site-head.error-page.with-post-image {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); }
+  @media only screen and (min-width: 40.063em) {
+    .post-template .artee-site-head,
+    .tag-template .artee-site-head,
+    .author-template .artee-site-head,
+    .artee-site-head.error-page {
+      padding-bottom: 3.4375rem;
+      padding-top: 3.125rem; }
+      .post-template .artee-site-head.with-post-image,
+      .tag-template .artee-site-head.with-post-image,
+      .author-template .artee-site-head.with-post-image,
+      .artee-site-head.error-page.with-post-image {
+        padding-top: 1.875rem;
+        padding-bottom: 2.1875rem; } }
+  .post-template .artee-site-head .artee-blog-title,
+  .tag-template .artee-site-head .artee-blog-title,
+  .author-template .artee-site-head .artee-blog-title,
+  .artee-site-head.error-page .artee-blog-title {
+    padding-bottom: 0; }
+
+/*******************************/
+/* artee post site content styles */
+/*******************************/
+.artee-post-container {
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  overflow: hidden; }
+  .artee-post-container .artee-post {
+    background: #fff;
+    padding: 0.625rem 1.875rem; }
+    @media only screen and (min-width: 40.063em) {
+      .artee-post-container .artee-post {
+        padding: 0.625rem 4.375rem; } }
+  .artee-post-container h1, .artee-post-container h2, .artee-post-container h3, .artee-post-container h4, .artee-post-container h5, .artee-post-container h6 {
+    font-weight: 300; }
+  .artee-post-container img, .artee-post-container .flex-video {
+    margin-bottom: 1.25rem; }
+  @media only screen and (min-width: 40.063em) {
+    .artee-post-container img, .artee-post-container .flex-video {
+      margin-bottom: 3.125rem; } }
+
+.artee-post-head {
+  text-align: center; }
+  .artee-post-head.artee-post-head-cover {
+    padding-left: 0;
+    padding-right: 0; }
+    .artee-post-head.artee-post-head-cover .artee-post-cover {
+      width: 100%;
+      height: 25rem;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%; }
+      @media only screen and (min-width: 40.063em) {
+        .artee-post-head.artee-post-head-cover .artee-post-cover {
+          height: 37.5rem; } }
+      .artee-post-head.artee-post-head-cover .artee-post-cover .artee-post-title {
+        border: 0;
+        padding: 0;
+        color: #fff;
+        padding: 1.875rem 0.9375rem 5rem;
+        margin: 0;
+        background-color: rgba(37, 37, 37, 0.6);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center; }
+        @media only screen and (min-width: 40.063em) {
+          .artee-post-head.artee-post-head-cover .artee-post-cover .artee-post-title {
+            padding: 0;
+            padding: 1.5625rem 0.9375rem 5rem;
+            margin: 0; } }
+    .artee-post-head.artee-post-head-cover time {
+      border: 0.625rem solid #fff;
+      width: 6.25rem;
+      height: 6.25rem;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      margin-top: 0;
+      margin-bottom: 0; }
+      .artee-post-head.artee-post-head-cover time .date {
+        padding-top: 1.25rem; }
+        .artee-post-head.artee-post-head-cover time .date .mounth {
+          display: block;
+          font-size: 1.625rem; }
+        .artee-post-head.artee-post-head-cover time .date .day {
+          display: block;
+          font-size: 1.125rem; }
+      @media only screen and (min-width: 40.063em) {
+        .artee-post-head.artee-post-head-cover time {
+          width: 6.875rem;
+          height: 6.875rem; }
+          .artee-post-head.artee-post-head-cover time .date {
+            padding-top: 1.125rem;
+            padding-left: 0;
+            padding-right: 0; }
+            .artee-post-head.artee-post-head-cover time .date .mounth {
+              font-size: 2rem; }
+            .artee-post-head.artee-post-head-cover time .date .day {
+              font-size: 1.25rem; } }
+  .artee-post-head h1.artee-post-title {
+    font-size: 2.25rem;
+    letter-spacing: normal;
+    margin-bottom: 1.5625rem;
+    margin-top: 0;
+    border-top: 1px solid #dadada;
+    padding-top: 0.625rem;
+    padding-bottom: 2.5rem;
+    line-height: 1.1; }
+    @media only screen and (min-width: 40.063em) {
+      .artee-post-head h1.artee-post-title {
+        font-size: 3.5rem;
+        margin-bottom: 2.1875rem;
+        letter-spacing: 0.0625rem;
+        line-height: 1.4; } }
+  .artee-post-head time {
+    display: block;
+    margin: 0 auto;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    background: #252525;
+    text-align: center;
+    font-family: "Playfair Display", Georgia, serif;
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem; }
+    @media only screen and (min-width: 40.063em) {
+      .artee-post-head time {
+        width: 5rem;
+        height: 5rem; } }
+    .artee-post-head time .date {
+      padding: 0.9375rem;
+      display: block;
+      color: #fff; }
+      @media only screen and (min-width: 40.063em) {
+        .artee-post-head time .date {
+          padding: 1.3125rem; } }
+      .artee-post-head time .date .mounth {
+        font-size: 1rem; }
+        @media only screen and (min-width: 40.063em) {
+          .artee-post-head time .date .mounth {
+            font-size: 1.375rem; } }
+
+.artee-post-container.error-page {
+  background: #fff; }
+
+.tag-template .artee-post-content,
+.author-template .artee-post-content {
+  padding-bottom: 5rem;
+  border-bottom: 1px solid #dadada;
+  margin-bottom: 3.75rem; }
+.tag-template h1.artee-post-title,
+.author-template h1.artee-post-title {
+  border-top: 0 !important; }
+.tag-template time,
+.author-template time {
+  margin-bottom: 0.625rem !important; }
+
+.artee-page-container .artee-post-title,
+.artee-tag-container .artee-post-title {
+  padding: 1.5625rem 0.9375rem 2.5rem !important;
+  border-top: 0 !important;
+  border-bottom: 1px solid #dadada !important; }
+.artee-page-container .artee-page,
+.artee-page-container .artee-tag,
+.artee-tag-container .artee-page,
+.artee-tag-container .artee-tag {
+  padding-top: 3.125rem; }
+  .artee-page-container .artee-page img, .artee-page-container .artee-page .flex-video,
+  .artee-page-container .artee-tag img,
+  .artee-page-container .artee-tag .flex-video,
+  .artee-tag-container .artee-page img,
+  .artee-tag-container .artee-page .flex-video,
+  .artee-tag-container .artee-tag img,
+  .artee-tag-container .artee-tag .flex-video {
+    border: 0.3125rem solid #fff;
+    -webkit-box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.3); }
+  .artee-page-container .artee-page .artee-post-head h1.artee-post-title,
+  .artee-page-container .artee-tag .artee-post-head h1.artee-post-title,
+  .artee-tag-container .artee-page .artee-post-head h1.artee-post-title,
+  .artee-tag-container .artee-tag .artee-post-head h1.artee-post-title {
+    border-top: 0;
+    border-bottom: 0.0625rem solid #dadada; }
+
+.artee-post-share {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  margin-top: 0;
+  text-align: center; }
+  .artee-post-share > a {
+    color: #252525;
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+  .artee-post-share .symbol {
+    font-size: 3.75rem; }
+
+.artee-post-author {
+  padding: 3.125rem 0;
+  color: #595959;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid #dadada;
+  border-bottom: 1px solid #dadada; }
+  @media only screen and (min-width: 40.063em) {
+    .artee-post-author {
+      text-align: left; } }
+  .artee-post-author h1, .artee-post-author h2, .artee-post-author h3, .artee-post-author h4, .artee-post-author h5, .artee-post-author h6 {
+    color: #595959; }
+  .artee-post-author p {
+    font-size: 1rem; }
+  .artee-post-author a {
+    color: #595959; }
+    .artee-post-author a:hover {
+      color: inherit;
+      text-decoration: underline; }
+  .artee-post-author .artee-post-author-avatar {
+    margin-bottom: 1.25rem;
+    max-width: 10rem;
+    max-height: 10rem;
+    width: 100%;
+    height: 100%;
+    border: 0.0625rem solid #dadada;
+    padding: 0.3125rem; }
+    @media only screen and (min-width: 40.063em) {
+      .artee-post-author .artee-post-author-avatar {
+        float: left;
+        margin-right: 3.125rem;
+        margin-bottom: 0; } }
+
+.artee-post-tags {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 2.5rem; }
+  .artee-post-tags h2 {
+    margin-bottom: 1.875rem; }
+  .artee-post-tags .artee-tag-item {
+    float: left;
+    margin-right: 0.3125rem;
+    margin-bottom: 0.3125rem;
+    padding: 0.625rem 0.9375rem;
+    background: #252525;
+    color: #fff; }
+    .artee-post-tags .artee-tag-item a {
+      color: inherit; }
+      .artee-post-tags .artee-tag-item a:hover, .artee-post-tags .artee-tag-item a:active, .artee-post-tags .artee-tag-item a:focus {
+        color: inherit; }
+
+.artee-author-page-avatar {
+  text-align: center;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #dadada; }
+  @media only screen and (min-width: 40.063em) {
+    .artee-author-page-avatar {
+      padding-bottom: 6.25rem;
+      margin-bottom: 6.25rem; } }
+  .artee-author-page-avatar h1 {
+    font-size: 2.375rem; }
+    @media only screen and (min-width: 40.063em) {
+      .artee-author-page-avatar h1 {
+        font-size: 4.5rem; } }
+  .artee-author-page-avatar img {
+    width: 11.25rem;
+    margin-bottom: 0.9375rem;
+    border: 0.3125rem solid #fff;
+    box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.3); }
+    @media only screen and (min-width: 40.063em) {
+      .artee-author-page-avatar img {
+        width: 14.375rem; } }
+  .artee-author-page-avatar .artee-author-page-stats {
+    font-size: 1.125rem; }
+    .artee-author-page-avatar .artee-author-page-stats .fa {
+      margin-left: 0.3125rem; }
+
+.artee-disqus {
+  margin-top: 1.875rem; }
+  .artee-disqus h2 {
+    margin-bottom: 1.25rem; }
+
+.post-template .twentytwenty-wrapper,
+.tag-template .twentytwenty-wrapper,
+.author-template .twentytwenty-wrapper {
+  margin-bottom: 3.125rem; }
+.post-template .artee-site-footer,
+.tag-template .artee-site-footer,
+.author-template .artee-site-footer {
+  display: block; }
+.post-template .artee-gallery,
+.tag-template .artee-gallery,
+.author-template .artee-gallery {
+  margin-bottom: 3.125rem; }
+
+.artee-tag-archive-header {
+  text-align: center; }
+  .artee-tag-archive-header h1 {
+    margin-top: 1.5625rem;
+    margin-bottom: 1.5625rem;
+    padding-bottom: 3.125rem;
+    font-size: 1.625rem;
+    border-bottom: 1px solid #dadada; }
+    @media only screen and (min-width: 40.063em) {
+      .artee-tag-archive-header h1 {
+        font-size: 2.625rem;
+        margin-top: 1.875rem;
+        margin-bottom: 4.375rem; } }
+
+.artee-tags-author {
+  line-height: 1.875rem;
+  font-size: 1rem;
+  margin-top: 1.5625rem;
+  color: #999; }
+  .artee-tags-author a {
+    color: #999; }
+  .artee-tags-author img {
+    width: 1.875rem;
+    float: left;
+    margin-right: 0.3125rem;
+    border-radius: 100%;
+    margin-bottom: 0; }
+
+.reading-time-indicator {
+  position: fixed;
+  bottom: 0;
+  left: 0.625rem;
+  width: calc(100% - 20px);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #252525;
+  z-index: 9999;
+  -webkit-transform: translate3d(0, 200%, 0);
+  -ms-transform: translate3d(0, 200%, 0);
+  transform: translate3d(0, 200%, 0);
+  -webkit-transition: transform .5s;
+  -ms-transition: transform .5s;
+  transition: transform .5s; }
+  .reading-time-indicator.visible {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  .reading-time-indicator .post-reading-time {
+    width: 100%;
+    position: relative;
+    background-color: rgba(37, 37, 37, 0.02);
+    height: 3.75rem;
+    overflow-y: hidden; }
+    .reading-time-indicator .post-reading-time .percent {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: auto;
+      height: 3.75rem;
+      line-height: 3.75rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding-right: 0.9375rem;
+      font-family: "Playfair Display", Georgia, serif;
+      color: #252525; }
+    .reading-time-indicator .post-reading-time .read-estimation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1050;
+      color: #252525;
+      padding: 0 0.9375rem;
+      height: 3.75rem;
+      vertical-align: middle;
+      display: table; }
+      .reading-time-indicator .post-reading-time .read-estimation .reading-time-blog-logo {
+        width: 3.75rem;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center; }
+        .reading-time-indicator .post-reading-time .read-estimation .reading-time-blog-logo .fa {
+          font-size: 1.5rem;
+          color: #252525;
+          padding-top: 0.3125rem; }
+      .reading-time-indicator .post-reading-time .read-estimation .read-estimation-content {
+        display: table-cell;
+        background-color: transparent;
+        vertical-align: middle;
+        margin-bottom: 0;
+        padding-left: 0.9375rem; }
+        .reading-time-indicator .post-reading-time .read-estimation .read-estimation-content .title {
+          font-weight: 400;
+          font-family: "Playfair Display", Georgia, serif;
+          line-height: 1.1;
+          font-size: 1rem;
+          font-weight: 600; }
+        .reading-time-indicator .post-reading-time .read-estimation .read-estimation-content .estimated-time {
+          font-weight: 300;
+          opacity: .6;
+          font-family: "Playfair Display", Georgia, serif;
+          font-size: 0.875rem; }
+    .reading-time-indicator .post-reading-time .read-progress-indicator {
+      width: 100%;
+      height: 3.75rem;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      background-color: transparent;
+      color: rgba(37, 37, 37, 0.05); }
+      .reading-time-indicator .post-reading-time .read-progress-indicator::-webkit-progress-bar {
+        background-color: transparent; }
+      .reading-time-indicator .post-reading-time .read-progress-indicator.single::-ms-fill {
+        border: 0; }
+      .reading-time-indicator .post-reading-time .read-progress-indicator.single::-webkit-progress-value {
+        background-color: rgba(37, 37, 37, 0.05); }
+      .reading-time-indicator .post-reading-time .read-progress-indicator.single::-moz-progress-bar {
+        background-color: rgba(37, 37, 37, 0.05); }
+    .reading-time-indicator .post-reading-time .progress-container {
+      width: 100%;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 5rem;
+      display: block;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      overflow-x: hidden; }
+      .reading-time-indicator .post-reading-time .progress-container .progress-bar {
+        background-color: #f4f4f4;
+        width: 100%;
+        height: 100%;
+        display: block; }

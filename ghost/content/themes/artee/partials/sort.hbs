@@ -1,0 +1,27 @@
+{{! index post grid sorting }}
+{{! mobile activator}}
+<div class="artee-mobile-sort">
+    <i class="fa fa-filter"> <span>FILTERS</span></i>
+</div>
+{{!filter}}
+<div class="artee-index-sort">
+    <div class="artee-too-wide-sort">
+        <i class="fa fa-filter"> <span>FILTER:</span> <span class="chosen-filer">All</span></i>
+    </div>
+    <ul class="artee-sort-groups-options auto-load-tags no-bullet">
+        {{!--
+            This will be auto populated with uniq tags names and you don't have to do anything.
+
+            But if you want to manually add only few chosen filter options just edit a sample code below (remember to add desired tags names into data-option="" param) You have to remove 'auto-load-tags' class too:
+
+            <li><a href="#" class="active" data-option="">All</a></li>
+            <li><a href="#" data-option="people">People</a></li>
+            <li><a href="#" data-option="animals">Animals</a></li>
+        --}}
+    </ul>
+    <ul class="artee-sort-options no-bullet">
+        <li><a href="#" class="active" data-option=""><i class="fa fa-sort"></i></a></li>
+        <li><a href="#" data-option="title-asc"><i class="fa fa-sort-alpha-asc"></i></a></li>
+        <li><a href="#" data-option="title-desc"><i class="fa fa-sort-alpha-desc"></i></a></li>
+    </ul>
+</div>

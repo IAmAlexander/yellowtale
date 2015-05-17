@@ -1,0 +1,88 @@
+{{!< default}}{{! The comment above "< default" means - insert everything in this file into the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{!-- body background image --}}
+<div class="artee-body-background" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
+
+{{! header section }}
+{{> head}}
+{{! header section end }}
+
+{{! main index section }}
+<main class="artee-index-content" role="main">
+
+	{{! background shapes }}
+	<div class="artee-index-bg1 hide-for-touch"></div>
+	<div class="artee-index-bg2 hide-for-touch"></div>
+	<div class="artee-index-bg3 hide-for-touch"></div>
+	<div class="artee-index-bg4 hide-for-touch"></div>
+
+	{{! index post grid sorting }}
+	{{> sort}}
+
+	{{! index article section - Each post will be output using this markup }}
+	<div id="artee-grid">
+	{{#foreach posts}}
+		<article class="artee-index-post {{post_class}}" data-tags="{{tags separator="," autolink="false"}}" data-groups='["{{#foreach tags}}{{#if @first}}{{name}}{{else}}","{{name}}{{/if}}{{/foreach}}"]' data-title='{{{title}}}' data-date-created='{{date format="YYYY-MM-DD"}}'>
+			<div class="artee-index-post-img">
+				{{#if image}}
+					<p><img src="{{image}}" alt="{{title}}"></p>
+				{{/if}}
+				<div class="artee-image-overlay hide-for-small hide-for-medium">
+					<a href="#" class="zoom-icon">
+						<span class="fa-stack">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-search fa-stack-1x"></i>
+						</span>
+					</a>
+					<a href="{{url}}" class="url-icon">
+						<span class="fa-stack">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-link fa-stack-1x"></i>
+						</span>
+					</a>
+				</div>
+			</div>
+			<div class="artee-index-post-container">
+				{{! index article section post header }}
+				<header class="artee-index-post-header">
+					<div class="artee-index-post-meta"><i class="fa fa-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></div>
+					<h3 class="artee-index-post-title"><a href="{{url}}">{{{title}}}</a></h3>
+				</header>
+				{{! index article section post header end }}
+
+				{{! index article section post excerpt }}
+				<section class="artee-index-post-excerpt">
+					<p>{{excerpt characters='120'}}&hellip;</p>
+					{{!-- author url with author image --}}
+					{{#if author}}
+						<div class="artee-index-author">
+							<img src="{{author.image}}" class="artee-index-author-image" alt="{{author.name}}"> {{author}}
+						</div>
+					{{/if}}
+					{{#if tags}}
+						<hr>
+						<div class="artee-index-post-tags">
+							{{#foreach tags}}
+								<i class="fa fa-tags"></i> <a href="{{url}}">{{name}}</a>
+							{{/foreach}}
+						</div>
+					{{/if}}
+				</section>
+				{{! index article section post excerpt end }}
+			</div>
+		</article>
+	{{/foreach}}
+	</div>
+	{{! index article section end }}
+
+	{{!! index pagination section - After all the posts, we have the previous/next pagination links }}
+	{{pagination}}
+	<div class="row">
+		<div class="small-12 text-center">
+			<button class="artee-load-more">Load more articles</button>
+		</div>
+	</div>
+	{{! index pagination section end }}
+
+</main>
+{{! main index section end }}

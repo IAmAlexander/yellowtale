@@ -1,0 +1,59 @@
+{{!< default}}{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! header section }}
+{{#tag}}
+    {{> head}}
+{{/tag}}
+{{! header section end }}
+
+{{! main tags section }}
+<main class="artee-post-container artee-tag-container" role="main">
+
+    {{#if tag.image}}
+        <section class="artee-post-head artee-post-head-cover small-12 columns">
+            <div class="artee-post-cover" style="background-image: url({{tag.image}});">
+                <h1 class="artee-post-title">All posts tagged in: '{{tag.name}}'</h1>
+            </div>
+        </section>
+    {{else}}
+        <div class="row">
+            <section class="artee-post-head artee-post-head-cover small-12 columns">
+                <h1 class="artee-post-title">All posts tagged in: '{{tag.name}}'</h1>
+            </section>
+        </div>
+    {{/if}}
+    <div class="cf"></div>
+
+    <article class="{{post_class}} artee-post artee-tag row">
+
+        {{#foreach posts}}
+
+        <section class="artee-post-head small-12 columns">
+            <time datetime="{{date format="YYYY-MM-DD"}}">
+                <span class="date">
+                    <span class="mounth">{{date format='MMM'}}</span>
+                    <span class="day">{{date format='DD'}}</span>
+                </span>
+            </time>
+            <h1 class="artee-post-title"><a href="{{url}}">{{title}}</a></h1>
+        </section>
+
+        <section class="artee-post-content small-12 columns">
+            <div>{{content words="60"}}</div>
+            {{#if author}}
+                <div class="artee-tags-author left">
+                    <img src="{{author.image}}" class="artee-index-author-image" alt="{{author.name}}"> {{author}}
+                </div>
+            {{/if}}
+            <div class="artee-read-more text-right right"><a href="{{url}}">read more</a></div>
+        </section>
+
+        {{/foreach}}
+
+    </article>
+
+    {{pagination}}
+
+</main>
+{{! main tags section end}}

@@ -1,0 +1,31 @@
+{{!< default}}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+	{{! header section }}
+	{{> head}}
+	{{! header section end }}
+
+	<main class="artee-post-container artee-page-container" role="main">
+
+		{{#if image}}
+			<section class="artee-post-head artee-post-head-cover small-12 columns">
+				<div class="artee-post-cover" style="background-image: url({{image}});">
+					<h1 class="artee-post-title">{{{title}}}</h1>
+				</div>
+			</section>
+		{{else}}
+			<div class="row">
+				<section class="artee-post-head artee-post-head-cover small-12 columns">
+					<h1 class="artee-post-title">{{{title}}}</h1>
+				</section>
+			</div>
+		{{/if}}
+		<div class="cf"></div>
+		<article class="{{post_class}} artee-page row">
+			<section class="artee-post-content small-12 columns">
+				{{content}}
+			</section>
+		</article>
+	</main>
+{{/post}}

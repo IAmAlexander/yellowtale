@@ -1,0 +1,22 @@
+{{!main menu partial - used in index.hbs. post.hbs and page.hbs}}
+{{!mobile menu button}}
+{{#if @blog.navigation}}
+	<div class="artee-mobile-menu show-for-small">
+		<a href="#"><i class="fa fa-bars"></i></a>
+	</div>
+{{/if}}
+{{!menu items}}
+<ul class="artee-menu">
+	{{#if @blog.navigation}}
+		{{!mobile close button (do not delete)}}
+		<li class="artee-mobile-close-btn show-for-small text-right">
+			<a href="#"><i class="fa fa-times"></i></a>
+		</li>
+		{{!-- see navigation.hbs file --}}
+		{{navigation}}
+	{{/if}}
+	{{!open search button}}
+	<li>
+		<a href="#" class="js-open-search search-menu-btn"><i class="fa fa-fw fa-search"></i></a>
+	</li>
+</ul>

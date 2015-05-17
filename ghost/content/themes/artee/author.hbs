@@ -1,0 +1,43 @@
+{{!< default}}{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! header section }}
+{{> head}}
+{{! header section end }}
+
+{{! main tags section }}
+<main class="artee-post-container artee-author-page" role="main">
+    <article class="artee-post row">
+        {{#author}}
+            <header class="artee-author-page-header">
+                <div class="row">
+                    <div class="artee-author-page-avatar">
+                        <img src="{{image}}" alt="">
+                        <h1>{{name}}</h1>
+                        <span class="artee-author-page-stats">
+                            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <a href="{{url}}rss/"><i class="fa fa-rss"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </header>
+        {{/author}}
+
+        {{#foreach posts}}
+            <section class="artee-post-head small-12 columns">
+                <time datetime="{{date format="YYYY-MM-DD"}}">
+                    <span class="date">
+                        <span class="mounth">{{date format='MMM'}}</span>
+                        <span class="day">{{date format='DD'}}</span>
+                    </span>
+                </time>
+                <h1 class="artee-post-title"><a href="{{url}}">{{title}}</a></h1>
+            </section>
+            <section class="artee-post-content small-12 columns">
+                <div>{{content words="60"}}</div>
+                <div class="artee-read-more text-right"><a href="{{url}}">read more</a></div>
+            </section>
+        {{/foreach}}
+    </article>
+    {{pagination}}
+</main>
+{{! main tags section end}}

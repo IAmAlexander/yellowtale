@@ -1,0 +1,85 @@
+{{!< default}}{{! The comment above "< default" means - insert everything in this file into
+	the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+	{{! header section }}
+	{{> head}}
+	{{! header section end }}
+
+	{{! main post section }}
+	<main class="artee-post-container" role="main">
+		{{#if image}}
+			<section class="artee-post-head artee-post-head-cover small-12 columns">
+				<div class="artee-post-cover" style="background-image: url({{image}});">
+					<h1 class="artee-post-title">{{{title}}}</h1>
+				</div>
+				<time datetime="{{date format="YYYY-MM-DD"}}">
+					<span class="date">
+						<span class="mounth">{{date format='MMM'}}</span>
+						<span class="day">{{date format='DD'}}</span>
+					</span>
+				</time>
+			</section>
+		{{else}}
+			<div class="row">
+				<section class="artee-post-head small-12 columns">
+					<time datetime="{{date format="YYYY-MM-DD"}}">
+						<span class="date">
+							<span class="mounth">{{date format='MMM'}}</span>
+							<span class="day">{{date format='DD'}}</span>
+						</span>
+					</time>
+					<h1 class="artee-post-title">{{{title}}}</h1>
+				</section>
+			</div>
+		{{/if}}
+		<div class="cf"></div>
+		<article class="{{post_class}} artee-post row">
+			<section class="artee-post-content small-12 columns">
+				{{content}}
+			</section>
+			<footer class="artee-post-footer small-12 columns">
+				<section class="artee-post-share">
+					<a class="twitter-icon" href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+						onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+						<span class="symbol">&#xe286;</span>
+					</a>
+					<a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+						onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+						<span class="symbol">&#xe227;</span>
+					</a>
+					<a class="google-icon" href="https://plus.google.com/share?url={{url absolute="true"}}"
+					   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+						<span class="symbol">&#xe239;</span>
+					</a>
+				</section>
+				{{#author}}
+					<section class="artee-post-author" {{#if cover}}style="background-image: url({{cover}});"{{/if}}>
+						<img src="{{#if image}}{{image}}{{else}}/shared/img/user-image.png{{/if}}" class="artee-post-author-avatar" alt="{{name}}">
+						<h3><a href="{{url}}">{{name}}</a></h3>
+						<p><a href="{{website}}">{{website}}</a></p>
+						<p>{{bio}}</p>
+					</section>
+				{{/author}}
+				{{#if tags}}
+					<section class="artee-post-tags">
+						{{#foreach tags}}
+							<div class="artee-tag-item">
+								<a href="{{url}}">{{name}}</a>
+							</div>
+						{{/foreach}}
+					</section>
+				{{/if}}
+				{{! disqus comments section, configure disqus in disqus.hbs file}}
+				{{> disqus }}
+			</footer>
+		</article>
+	</main>
+	{{! main post section end}}
+
+	{{! post reading time sticky footer }}
+	{{> "progress"}}
+
+{{/post}}
